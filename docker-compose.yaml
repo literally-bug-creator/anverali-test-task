@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  database:
+    container_name: postgre_db
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.docker/conf/postgres/:/docker-entrypoint-initdb.d/
+      - ./.docker/conf/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=telegram_bot_db
+    restart: always
+
+  pg_admin:
+    container_name: pgAdmin
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=test_task@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=12345
+    ports:
+      - "5050:80"
