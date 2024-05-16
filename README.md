@@ -1,11 +1,21 @@
 # О проекте
 Выполнялся как тестовое задание в компании [Анверали](https://анверали.рф/) на позицию ***Junior Python Developer***.
 
-Включает в себя Docker-Compose, содержащий PostgreSQL и pgAdmin4, а также конфигурационные файлы для БД и, соответственно, точка входа в проект - `bot.py`
+Включает в себя Docker-Compose, содержащий PostgreSQL и pgAdmin4, а также конфигурационные файлы для БД и, соответственно, точка входа в проект - `bot.py`.
+
+Никаких защит нет + `.env` со всеми необходимыми полями для запуска с `docker-compose.yaml` лежит в директории проекта.
 
 
 # Запуск
-1. docker compose up -d
-2. python src/bot.py
+1. `docker compose up -d`
+2. `python -m venv venv`
+3. Активируйте виртуальное окружение
+4. `pip install -r requirements.txt`
+5. `python src/bot.py`
+
+
+# Команды БОТа
+1. `/add *название задачи*` - добавить новую задачу
+2. `/tsk` - получить список задач
 
 Токен БОТа расположен в `bot.py`, [ссылка](https://t.me/AnveraliTestTask_Bot)
