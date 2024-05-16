@@ -1,1 +1,0 @@
-# anverali-test-task
